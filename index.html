@@ -1,181 +1,215 @@
 <!DOCTYPE html>
-<html>
-<style>
-html, body {
-	margin: 0;
-	height: 100%;
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Google</title>
+</head>
+<body>
+    <div id="navbar">
+        <a href="#" id="about">About</a>
+        <a href="#" id="store">Store</a>
+        <a href="#" id="gmail">Gmail</a>
+        <a href="#" id="image">Images</a>
+        <a href="#" id="menu"><img src="menu.png" height="30px" width="30px"></a>
+        <a href="#" id="sign-in">Sign in</a>
+    </div>
+    <div id="main">
+        <a href="#" id="logo"><img src="logo.png"></a>
+        <input type="text" id="search">
+        <div id="flexbox">
+            <button id="google-search-btn">Google Search</button><button id="random-search-btn">I'm Feeling Lucky</button>
+        </div>
+        <p id="google-text">Google offered in: <a href="#" id="deutsch">Deutsch</a></p>
+    </div>
+    <div id="footer">
+        <a href="#" id="advertising">Advertising</a>
+        <a href="#" id="business">Business</a>
+        <a href="#" id="hsw">How Search works</a>
+        <a href="#" id="privacy">Privacy</a>
+        <a href="#" id="terms">Terms</a>
+        <a href="#" id="settings">Settings</a>
+    </div>
+</body>
+</html>
+
+html {
+    height: 100%;
+    width: 100%;
 }
 
-#nav {
-	display: flex;
-	justify-content: flex-end;
-	margin-top: 15px;
+/*Navbar Section*/
+#navbar {
+    display: grid;
+    grid-template-columns: 50px 50px 1fr 50px 50px 50px 50px;
+    grid-template-rows: 50px;
+    grid-template-areas: 
+    "about store . gmail image menu sign-in";
+    margin: 0 20px 0 10px;
 }
 
-a {
-	text-decoration: none;
+a, p {
+    text-decoration: none;
+    color: rgba(0,0,0,0.87);
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
 }
-
 a:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
-#nav a {
-	margin-right: 20px; 
+#about {
+    grid-area: about;
+    justify-self: center;
+    align-self: center;
+}
+#store {
+    grid-area: store;
+    justify-self: center;
+    align-self: center;
+}
+#gmail {
+    grid-area: gmail;
+    justify-self: center;
+    align-self: center;
+}
+#image {
+    grid-area: image;
+    justify-self: center;
+    align-self: center;
+    margin-right: 10px;
+}
+#menu {
+    grid-area: menu;
+    justify-self: center;
+    align-self: center;
+    margin-right: 20px;
+}
+#sign-in {
+    grid-area: sign-in;
+    justify-self: center;
+    align-self: center;
+    background-color: #4683ea;
+    height: 30px;
+    width: 65px;
+    line-height: 30px;
+    text-align: centeR;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #4285f4;
 }
 
-#nav a.topimage {
-	width: 20px;
-	height: 20px;
-	background: red;
-	border-radius: 50%;
-}
-
-#middle {
-	flex-grow: 1;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+/*Main Section*/
+#main {
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 250px 70px 70px 250px;
+    grid-template-areas: 
+    ". logo ."
+    ". search ."
+    ". flexbox ."
+    ". google-text .";
 }
 
 #logo {
-	text-align: center;
+    grid-area: logo;
+    justify-self: center;
+    align-self: end;
 }
-
-#searchbarcontainer {
-	margin-top: 20px;
-	text-align: center;
-	position: relative;
-}
-
-#search, #voice {
-	position: absolute;
-	top: 0;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
 #search {
-	left: 10px;
+    grid-area: search;
+    height: 30px;
+    width: 80%;
+    align-self: center;
+    justify-self: center;
+    border: 1px solid rgba(0, 0, 0, 0.151);
+    border-radius: 30px;
 }
 
-#voice {
-	right: 10px;
+#search:focus {
+    box-shadow: 1px 1px 5px grey;
+}
+#search:hover {
+    box-shadow: 1px 1px 5px grey;
 }
 
-#searchbar {
-	padding-top: 10px;
-	padding-bottom: 10px;
-	outline: 0;
-	width: 500px;
-	padding-left: 30px;
-	padding-right: 30px;
-	border-radius: 15px;
-	border: 1px solid #c4c4c4;
+#flexbox {
+    display: flexbox;
+    grid-area: flexbox;
+    justify-self: center;
+    align-self: center;
+}
+#google-search-btn {
+    border: none;
+    font-size: 15px;
+    color: #5F6368;
+    margin-right: 25px;
+    padding: 7px 15px 7px 15px;
+    border-radius: 3px;
+}
+#random-search-btn {
+    border: none;
+    font-size: 15px;
+    color: #5F6368;
+    padding: 7px 15px 7px 15px;
+    border-radius: 3px;
+}
+#google-search-btn:hover {
+    border: 1px solid rgba(0, 0, 0, 0.226);
+}
+#random-search-btn:hover {
+    border: 1px solid rgba(0, 0, 0, 0.226);
 }
 
-#searchbar:hover {
-	box-shadow: 0 0 10px 2px rgb(233, 233, 233);
+#google-text {
+    grid-area: google-text;
+    justify-self: center;
+}
+#deutsch {
+    color: blue;
 }
 
-#buttons {
-	margin-top: 20px;
-	display: flex;
-	justify-content: center;
+/*Footer Section*/
+#footer {
+    position: absolute;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 100px 100px 150px 1330px 70px 70px 70px;
+    grid-template-rows: 50px;
+    grid-template-areas: 
+    "advertising business hsw . privacy terms settings";
 }
 
-.button {
-	margin-left: 10px;
-	margin-right: 10px;
-	padding: 5px 10px;
-	cursor: pointer;
-	border-radius: 3px;
-	background: rgb(231, 231, 231);
-	border: 2px solid transparent;
+#advertising {
+    grid-area: advertising;
+    justify-self: center;
+    align-self: center;
 }
-
-#links {
-	margin-top: 20px;
-	text-align: center;
+#business {
+    grid-area: business;
+    justify-self: center;
+    align-self: center;
 }
-
-body {
-	display: flex;
-	flex-direction: column;
+#hsw {
+    grid-area: hsw;
+    justify-self: center;
+    align-self: center;
 }
-
-.button:hover {
-	box-shadow: 0 0 2px 1px black;
-	border: 2px solid #eee;
+#privacy {
+    grid-area: privacy;
+    justify-self: center;
+    align-self: center;
 }
-
-#footer-content {
-	background: #eee;
-	border-top: 1px solid black;
-
+#terms {
+    grid-area: terms;
+    justify-self: center;
+    align-self: center;
 }
-</style>
-	<head>
-		<title>Google Clone</title>
-		<link href=“style.css” rel=“stylesheet” />
-
-	</head>
-
-	<body>
-		
-		
-		<div id=“nav”>
-		
-			<ul>
-				<li class="name"><a href="#">+Jake</a></li>
-				<li class="gmail"><a href="#">Gmail</a></li>
-				<li class="images"><a href="#">Images</a></li>
-				<li class="icons"><a href="#"><img src="./img/icons.png" alt="icons"></a></li>
-				<li class="notifications"><a href="#"><img src="./img/notifications.png" alt="notifications"></a></li>
-				<li class="messages"><a href="#"><img src="./img/messages.png" alt="messages"></a></li>
-				<li class="portrait"><a href="#"><img src="./img/photo.jpg" alt="portrait"></a></li>
-			</ul>
-		</div> 
-
-		<div id="middle">
-
-<div id="logo">
-	<img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" />
-</div>
-
-<div id="searchbarcontainer">
-	<div id="search">X</div>
-	<input id="searchbar" type="text">
-		<div id="voice">Y</div>
-
-
-</div>
-
-<div id="buttons">
-<div class="button">
-Google Search
-</div>
-	</div>
-	<div class="button">
-I'm Feeling Lucky
-</div>
-
-
-	<div id="links">
-		Google is offered in <a href="">X</a> <a href="">Y</a>
-	</div>
-
-	</div>
-
-
-	<div id="footer-content">
-<a>Link 1</a>
-<a>Link 2</a>
-</div>
-
-	</body>
-
-</html>
+#settings {
+    grid-area: settings;
+    justify-self: center;
+    align-self: center;
+}
